@@ -1,0 +1,5 @@
+# Ignore type file
+src/vite-env.d.ts
+
+# Ignore all HTML files:
+*.html
