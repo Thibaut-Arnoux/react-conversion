@@ -20,10 +20,6 @@ export const NavBar = () => {
     const drawerWidth = 240;
     const navItems: NavBarItem[] = [
         {
-            name: 'HomeTest',
-            link: '/home'
-        },
-        {
             name: 'Login',
             link: '/login'
         },
