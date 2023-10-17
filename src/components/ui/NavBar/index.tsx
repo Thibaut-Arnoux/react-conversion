@@ -12,19 +12,20 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, Outlet } from 'react-router-dom';
 import { NavBarItem } from './NavBar';
 
 export const NavBar = () => {
-    const title = 'Conversion';
+    const { t } = useTranslation();
     const drawerWidth = 240;
     const navItems: NavBarItem[] = [
         {
-            name: 'Login',
+            name: t('login'),
             link: '/login'
         },
         {
-            name: 'Register',
+            name: t('register'),
             link: '/register'
         }
     ];
@@ -42,7 +43,7 @@ export const NavBar = () => {
                 to="/"
                 sx={{ my: 2, textDecoration: 'none', color: '#000' }}
             >
-                {title}
+                {t('app_name')};
             </Typography>
             <Divider />
             <List>
@@ -84,7 +85,7 @@ export const NavBar = () => {
                                 color: '#FFF'
                             }}
                         >
-                            {title}
+                            {t('app_name')}
                         </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             {navItems.map((item) => (
