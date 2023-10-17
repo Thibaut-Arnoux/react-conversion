@@ -8,7 +8,7 @@ const App = () => {
     return (
         <>
             <ThemeProvider theme={theme}>
-                {/* <CssBaseline /> */}
+                <CssBaseline />
                 <RouterProvider router={router} />
             </ThemeProvider>
         </>
