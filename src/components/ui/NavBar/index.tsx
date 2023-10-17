@@ -36,8 +36,13 @@ export const NavBar = () => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                <Link to="/">{title}</Link>
+            <Typography
+                variant="h6"
+                component={Link}
+                to="/"
+                sx={{ my: 2, textDecoration: 'none', color: '#000' }}
+            >
+                {title}
             </Typography>
             <Divider />
             <List>
@@ -70,15 +75,21 @@ export const NavBar = () => {
                         </IconButton>
                         <Typography
                             variant="h6"
-                            component="div"
-                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                            component={Link}
+                            to="/"
+                            sx={{
+                                flexGrow: 1,
+                                display: { xs: 'none', sm: 'block' },
+                                textDecoration: 'none',
+                                color: '#FFF'
+                            }}
                         >
-                            <Link to="/">{title}</Link>
+                            {title}
                         </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             {navItems.map((item) => (
                                 <Link key={item.name} to={item.link}>
-                                    <Button sx={{ color: '#fff' }}>{item.name}</Button>
+                                    <Button sx={{ color: '#FFF' }}>{item.name}</Button>
                                 </Link>
                             ))}
                         </Box>
