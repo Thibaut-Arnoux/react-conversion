@@ -43,7 +43,7 @@ export const NavBar = () => {
                 to="/"
                 sx={{ my: 2, textDecoration: 'none', color: '#000' }}
             >
-                {t('app_name')};
+                {t('app_name')}
             </Typography>
             <Divider />
             <List>
