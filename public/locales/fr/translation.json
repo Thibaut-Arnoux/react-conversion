@@ -1,4 +1,15 @@
 {
     "login": "Connexion",
-    "register": "Inscription"
+    "register": "Inscription",
+    "form": {
+        "label": {
+            "email": "Email",
+            "password": "Mot de passe"
+        },
+        "validation": {
+            "email_required": "Email obligatoire",
+            "email_valid": "Email non valide",
+            "password_required": "Mot de passe obligatoire"
+        }
+    }
 }

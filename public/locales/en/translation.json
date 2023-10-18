@@ -1,5 +1,16 @@
 {
     "app_name": "Conversion",
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "form": {
+        "label": {
+            "email": "Email",
+            "password": "Password"
+        },
+        "validation": {
+            "email_required": "Email is required",
+            "email_valid": "Invalid email",
+            "password_required": "Password is required"
+        }
+    }
 }
