@@ -5,11 +5,16 @@
     "form": {
         "label": {
             "email": "Email",
-            "password": "Password"
+            "name": "Name",
+            "password": "Password",
+            "password_confirmation": "Password confirmation"
         },
         "validation": {
             "email_required": "Email is required",
             "email_valid": "Invalid email",
+            "name_required": "Name is required",
+            "password_min": "Password must be at least 8 characters",
+            "password_mismatch": "Passwords do not match",
             "password_required": "Password is required"
         }
     }
