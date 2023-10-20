@@ -1,7 +1,13 @@
 import { LoginForm } from '@/components/form/LoginForm';
+import { LoginFormType } from '@/components/form/LoginForm/LoginForm';
 import { CenteredBox } from '@/components/layout/CenteredBox';
 
 export const Login = () => {
+    const handleSubmit = (data: LoginFormType): void => {
+        console.log(data);
+        // TODO: Handle form submission logic here
+    };
+
     return (
         <CenteredBox
             sx={{
@@ -12,7 +18,7 @@ export const Login = () => {
                 borderRadius: '10px'
             }}
         >
-            <LoginForm />
+            <LoginForm onSubmit={handleSubmit} />
         </CenteredBox>
     );
 };

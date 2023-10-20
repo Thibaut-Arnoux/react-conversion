@@ -10,3 +10,7 @@ export const loginDTO = z.object({
 });
 
 export type LoginFormType = z.infer<typeof loginDTO>;
+
+export interface ILoginFormProps {
+    onSubmit: (data: LoginFormType) => void;
+}
