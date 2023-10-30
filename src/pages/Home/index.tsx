@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 
 const Home = () => {
     const openInNewTab = () => {
@@ -11,15 +11,14 @@ const Home = () => {
 
     return (
         <>
-            <Box textAlign={'center'} mt={20} p={5} maxHeight={'100%'}>
-                <Box
-                    width={'100%'}
-                    textAlign={'center'}
-                    mt={10}
-                    fontWeight={700}
-                    fontSize={'1.25rem'}
-                    lineHeight={'1.75rem'}
-                >
+            <Stack
+                sx={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: { xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }
+                }}
+            >
+                <Box fontWeight={700} fontSize={'1.25rem'} lineHeight={'1.75rem'}>
                     <Typography
                         variant="h1"
                         mb={4}
@@ -34,7 +33,7 @@ const Home = () => {
                 <Button variant="outlined" onClick={openInNewTab}>
                     Material UI Documentation
                 </Button>
-            </Box>
+            </Stack>
         </>
     );
 };
