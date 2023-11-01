@@ -16,5 +16,11 @@
             "password_mismatch": "Les mots de passe ne correspondent pas",
             "password_required": "Mot de passe obligatoire"
         }
+    },
+    "service": {
+        "error": {
+            "login_validation": "Reponse serveur non valide lors de la tentative de connexion",
+            "login_unknown": "Erreur inconnue lors de la tentative de connexion"
+        }
     }
 }

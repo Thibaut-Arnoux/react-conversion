@@ -1,7 +1,7 @@
 import i18n from '@/i18n';
 import { z } from 'zod';
 
-export const registerDTO = z
+export const RegisterFormDTO = z
     .object({
         email: z
             .string()
@@ -22,7 +22,7 @@ export const registerDTO = z
         path: ['confirmPassword']
     });
 
-export type RegisterFormType = z.infer<typeof registerDTO>;
+export type RegisterFormType = z.infer<typeof RegisterFormDTO>;
 
 export interface IRegisterFormProps {
     onSubmit: (data: RegisterFormType) => void;

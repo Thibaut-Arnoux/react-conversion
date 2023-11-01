@@ -19,3 +19,8 @@ export const TokenDTO = z.object({
     token_type: z.literal('Bearer'),
     refresh_token: z.string()
 });
+
+export const ConnexionDTO = z.object({
+    user: UserDTO,
+    tokens: TokenDTO
+});

@@ -17,5 +17,11 @@
             "password_mismatch": "Passwords do not match",
             "password_required": "Password is required"
         }
+    },
+    "service": {
+        "error": {
+            "login_validation": "Invalid server response during login",
+            "login_unknown": "Unknown error during login"
+        }
     }
 }

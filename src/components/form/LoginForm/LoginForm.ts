@@ -1,7 +1,7 @@
 import i18n from '@/i18n';
 import { z } from 'zod';
 
-export const loginDTO = z.object({
+export const LoginFormDTO = z.object({
     email: z
         .string()
         .min(1, i18n.t('form.validation.email_required'))
@@ -9,7 +9,7 @@ export const loginDTO = z.object({
     password: z.string().min(1, i18n.t('form.validation.password_required'))
 });
 
-export type LoginFormType = z.infer<typeof loginDTO>;
+export type LoginFormType = z.infer<typeof LoginFormDTO>;
 
 export interface ILoginFormProps {
     onSubmit: (data: LoginFormType) => void;
