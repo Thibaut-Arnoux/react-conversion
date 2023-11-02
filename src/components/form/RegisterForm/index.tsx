@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { IRegisterFormProps, RegisterFormDTO, RegisterFormType } from './RegisterForm';
+import { IRegisterFormProps, RegisterFormSchema, RegisterFormType } from './RegisterForm';
 
 export const RegisterForm = (props: IRegisterFormProps) => {
     const { t } = useTranslation();
@@ -11,7 +11,7 @@ export const RegisterForm = (props: IRegisterFormProps) => {
         handleSubmit,
         formState: { errors }
     } = useForm<RegisterFormType>({
-        resolver: zodResolver(RegisterFormDTO)
+        resolver: zodResolver(RegisterFormSchema)
     });
 
     return (

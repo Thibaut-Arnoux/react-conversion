@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { ILoginFormProps, LoginFormDTO, LoginFormType } from './LoginForm';
+import { ILoginFormProps, LoginFormSchema, LoginFormType } from './LoginForm';
 
 export const LoginForm = (props: ILoginFormProps) => {
     const { t } = useTranslation();
@@ -11,7 +11,7 @@ export const LoginForm = (props: ILoginFormProps) => {
         handleSubmit,
         formState: { errors }
     } = useForm<LoginFormType>({
-        resolver: zodResolver(LoginFormDTO)
+        resolver: zodResolver(LoginFormSchema)
     });
 
     return (

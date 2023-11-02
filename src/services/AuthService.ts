@@ -1,4 +1,4 @@
-import { ConnexionDTO } from '@/dtos';
+import { ConnexionSchema } from '@/dtos';
 import i18n from '@/i18n';
 import { IUser, User } from '@/models/User';
 import { AxiosInstance } from 'axios';
@@ -20,7 +20,7 @@ export class AuthService {
                 email,
                 password
             });
-            const loginResponse = ConnexionDTO.parse(res.data);
+            const loginResponse = ConnexionSchema.parse(res.data);
 
             // Store token in local storage
             localStorage.setItem('token', loginResponse.tokens.access_token);

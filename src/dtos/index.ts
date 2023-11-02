@@ -1,26 +1,26 @@
 import { z } from 'zod';
 
-export const DateDTO = z.object({
+export const DateSchema = z.object({
     human: z.string(),
     string: z.string(),
     local: z.date({ coerce: true })
 });
 
-export const UserDTO = z.object({
+export const UserSchema = z.object({
     id: z.string().uuid(),
     name: z.string(),
     email: z.string().email(),
-    created_at: DateDTO,
-    updated_at: DateDTO
+    created_at: DateSchema,
+    updated_at: DateSchema
 });
 
-export const TokenDTO = z.object({
+export const TokenSchema = z.object({
     access_token: z.string(),
     token_type: z.literal('Bearer'),
     refresh_token: z.string()
 });
 
-export const ConnexionDTO = z.object({
-    user: UserDTO,
-    tokens: TokenDTO
+export const ConnexionSchema = z.object({
+    user: UserSchema,
+    tokens: TokenSchema
 });
