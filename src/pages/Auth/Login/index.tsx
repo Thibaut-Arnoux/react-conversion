@@ -1,11 +1,25 @@
 import { LoginForm } from '@/components/form/LoginForm';
 import { LoginFormType } from '@/components/form/LoginForm/LoginForm';
 import { CenteredBox } from '@/components/layout/CenteredBox';
+import { IUser } from '@/models/User';
+import { AuthService } from '@/services/AuthService';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-    const handleSubmit = (loginForm: LoginFormType): void => {
-        console.log(loginForm);
-        // TODO: Handle form submission logic here
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
+
+    const loginMutation = useMutation<IUser, Error, LoginFormType>({
+        mutationFn: (login) => new AuthService().login(login.email, login.password),
+        onSuccess: (user) => {
+            queryClient.setQueryData<IUser>(['user'], user);
+        }
+    });
+
+    const handleSubmit = async (loginForm: LoginFormType) => {
+        await loginMutation.mutateAsync(loginForm);
+        navigate('/');
     };
 
     return (

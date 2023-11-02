@@ -25,11 +25,7 @@ export class AuthService {
             // Store token in local storage
             localStorage.setItem('token', loginResponse.tokens.access_token);
 
-            // Store refresh_token in cookie
-            // TODO : Verify expiration date
-            document.cookie = `refresh_token=${
-                loginResponse.tokens.refresh_token
-            }; path=/; expires=${new Date(Date.now() + 30 * 24 * 60 * 1000).toUTCString()}`;
+            // TODO : Server side store refresh_token in cookie
 
             return new User(
                 loginResponse.user.id,
