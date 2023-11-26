@@ -1,5 +1,5 @@
 import { NavBar } from '@/components/ui/NavBar';
-import Home from '@/pages/Home';
+import { Home } from '@/pages/Home';
 import { Profile } from '@/pages/Profile';
 import { ForgotPassword } from '@/pages/auth/ForgotPassword';
 import { Login } from '@/pages/auth/Login';
