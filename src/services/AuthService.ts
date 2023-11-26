@@ -1,6 +1,6 @@
-import { ConnexionSchema } from '@/dtos';
 import i18n from '@/i18n';
 import { IUser, User } from '@/models/User';
+import { ConnexionSchema } from '@/schemas/';
 import { AxiosInstance } from 'axios';
 import { ZodError } from 'zod';
 import { httpClient } from './HttpClient';

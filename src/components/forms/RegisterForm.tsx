@@ -1,17 +1,18 @@
+import { RegisterFormSchema } from '@/schemas';
+import { IRegisterFormProps, RegisterFormType } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { ILoginFormProps, LoginFormSchema, LoginFormType } from './LoginForm';
 
-export const LoginForm = (props: ILoginFormProps) => {
+export const RegisterForm = (props: IRegisterFormProps) => {
     const { t } = useTranslation();
     const {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm<LoginFormType>({
-        resolver: zodResolver(LoginFormSchema)
+    } = useForm<RegisterFormType>({
+        resolver: zodResolver(RegisterFormSchema)
     });
 
     return (
@@ -25,12 +26,23 @@ export const LoginForm = (props: ILoginFormProps) => {
                 }}
             >
                 <TextField
+                    {...register('name')}
+                    label={t('form.label.name')}
+                    error={!!errors.name}
+                    helperText={errors.name?.message}
+                    sx={{
+                        width: '100%'
+                    }}
+                />
+
+                <TextField
                     {...register('email')}
                     label={t('form.label.email')}
                     error={!!errors.email}
                     helperText={errors.email?.message}
                     sx={{
-                        width: '100%'
+                        width: '100%',
+                        mt: 2
                     }}
                 />
 
@@ -46,6 +58,18 @@ export const LoginForm = (props: ILoginFormProps) => {
                     }}
                 />
 
+                <TextField
+                    {...register('confirmPassword')}
+                    type="password"
+                    label={t('form.label.password_confirmation')}
+                    error={!!errors.confirmPassword}
+                    helperText={errors.confirmPassword?.message}
+                    sx={{
+                        width: '100%',
+                        mt: 2
+                    }}
+                />
+
                 <Button
                     type="submit"
                     variant="contained"
@@ -54,7 +78,7 @@ export const LoginForm = (props: ILoginFormProps) => {
                         mt: 2
                     }}
                 >
-                    {t('login')}
+                    {t('register')}
                 </Button>
             </Box>
         </form>

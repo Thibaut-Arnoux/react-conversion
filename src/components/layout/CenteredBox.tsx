@@ -1,8 +1,5 @@
-import { Box, BoxProps } from '@mui/material';
-
-interface CenteredBoxProps extends BoxProps {
-    children: React.ReactNode;
-}
+import { CenteredBoxProps } from '@/types/';
+import { Box } from '@mui/material';
 
 export const CenteredBox = ({ children, sx, ...rest }: CenteredBoxProps) => {
     return (

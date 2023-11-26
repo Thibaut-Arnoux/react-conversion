@@ -1,6 +1,14 @@
 import i18n from '@/i18n';
 import { z } from 'zod';
 
+export const LoginFormSchema = z.object({
+    email: z
+        .string()
+        .min(1, i18n.t('form.validation.email_required'))
+        .email(i18n.t('form.validation.email_valid')),
+    password: z.string().min(1, i18n.t('form.validation.password_required'))
+});
+
 export const RegisterFormSchema = z
     .object({
         email: z
@@ -21,9 +29,3 @@ export const RegisterFormSchema = z
         message: i18n.t('form.validation.password_mismatch'),
         path: ['confirmPassword']
     });
-
-export type RegisterFormType = z.infer<typeof RegisterFormSchema>;
-
-export interface IRegisterFormProps {
-    onSubmit: (data: RegisterFormType) => void;
-}

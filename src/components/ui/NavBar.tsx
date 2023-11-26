@@ -1,3 +1,4 @@
+import { NavBarItem } from '@/types';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,7 +15,6 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Outlet } from 'react-router-dom';
-import { NavBarItem } from './NavBar';
 
 export const NavBar = () => {
     const { t } = useTranslation();

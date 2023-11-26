@@ -1,6 +1,6 @@
-import { RegisterForm } from '@/components/form/RegisterForm';
-import { RegisterFormType } from '@/components/form/RegisterForm/RegisterForm';
+import { RegisterForm } from '@/components/forms/RegisterForm';
 import { CenteredBox } from '@/components/layout/CenteredBox';
+import { RegisterFormType } from '@/types';
 
 export const Register = () => {
     const handleSubmit = (data: RegisterFormType): void => {

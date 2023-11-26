@@ -1,10 +1,5 @@
 import { z } from 'zod';
-
-export const DateSchema = z.object({
-    human: z.string(),
-    string: z.string(),
-    local: z.date({ coerce: true })
-});
+import { DateSchema } from '.';
 
 export const UserSchema = z.object({
     id: z.string().uuid(),
