@@ -1,5 +1,5 @@
+import { DateSchema } from '@/schemas';
 import { z } from 'zod';
-import { DateSchema } from '.';
 
 export const UserSchema = z.object({
     id: z.string().uuid(),

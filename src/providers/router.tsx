@@ -1,13 +1,13 @@
 import { NavBar } from '@/components/ui/NavBar';
-import { ForgotPassword } from '@/pages/Auth/ForgotPassword';
-import { Login } from '@/pages/Auth/Login';
-import { Register } from '@/pages/Auth/Register';
-import { ResetPassword } from '@/pages/Auth/ResetPassword';
 import Home from '@/pages/Home';
 import { Profile } from '@/pages/Profile';
+import { ForgotPassword } from '@/pages/auth/ForgotPassword';
+import { Login } from '@/pages/auth/Login';
+import { Register } from '@/pages/auth/Register';
+import { ResetPassword } from '@/pages/auth/ResetPassword';
 import { createBrowserRouter } from 'react-router-dom';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         element: <NavBar />,
         children: [
@@ -38,5 +38,3 @@ const router = createBrowserRouter([
         ]
     }
 ]);
-
-export default router;

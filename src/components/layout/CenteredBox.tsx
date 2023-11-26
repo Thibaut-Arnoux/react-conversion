@@ -1,4 +1,4 @@
-import { CenteredBoxProps } from '@/types/';
+import { CenteredBoxProps } from '@/types';
 import { Box } from '@mui/material';
 
 export const CenteredBox = ({ children, sx, ...rest }: CenteredBoxProps) => {
